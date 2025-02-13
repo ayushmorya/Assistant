@@ -46,7 +46,7 @@ def take_command():
         query = r.recognize_google(audio, language='en-US')
         print(f"User said: {query}\n")
     except Exception as e:
-        speak("Sorry, I couldn't understand you. Please say that again")
+        speak("Sorry, I didn't get it Boss")
         return "None"
     query = query.lower()
     return query
@@ -86,16 +86,6 @@ def news():
         head.append(ar['title'])
     for i in range(len(day)):
         speak(f"{day[i]} headline: {head[i]}")
-
-#calling
-def call_miss_sakshi():
-    sakshi_number = ""
-    try:
-        # Initiates a WhatsApp call; this may open the WhatsApp Web app with the number
-        kit.sendwhatmsg_instantly(sakshi_number, "Hello, Sakshi! Ayush is thinking about you 😉", 15, True, 5)
-        print("Message sent and call initiated!")
-    except Exception as e:
-        print("An error occurred:", e)
 
 #pdf read
 def pdf_reader():
